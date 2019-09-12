@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Web bluetooth testing</title>
+  </head>
+  <body>
+    <script>
+      function GetDevices() {
+          let options = {acceptAllDevices: true};
+
+          document.getElementById('devices').value += 'Getting devices...\n';
+          navigator.bluetooth.requestDevice(options)
+          .then(device => {
+                  val = document.getElementById('devices').value;
+                  val += '> Name:             ' + device.name + '\n';
+                  val += '> Id:             ' + device.id + '\n';
+                  val += '> Connected:             ' + device.gatt.connected + '\n';
+                  document.getElementById('devices').value = val;
+              })
+           .catch(error => {
+                  document.getElementById('devices').value += 'Error: ' + error + '\n';
+              });
+      }
+    </script>
+
+    <button onclick="GetDevices()">Get devices</button><br />
+    <textarea id="devices" rows="20" cols="150"></textarea>
+  </body>
+</html>

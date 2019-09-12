@@ -1,0 +1,10 @@
+
+<html>
+  <head>
+    <title>Testing</title>
+  </head>
+  <body>
+    Some web testing stuff
+    <a href="web-bluetooth/index.html">Web bluetooth testing</a>
+  </body>
+</html>
